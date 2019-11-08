@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class WordSearch {
 
@@ -13,7 +12,7 @@ public class WordSearch {
         }
         //if not found, search vertically until found or no more cols
         for (int i = 0; i < matrix[0].length && !found; i++) {
-            String word = getWord(matrix, i);
+            String word = getWordInColumn(matrix, i);
             if (word.equalsIgnoreCase(targetWord)) {
                 found = true;
             }
@@ -21,10 +20,10 @@ public class WordSearch {
         return found;
     }
 
-    private String getWord(String[][] matrix, int j) {
+    private String getWordInColumn(String[][] matrix, int columnNo) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < matrix.length; i++) {
-            sb.append(matrix[i][j]);
+            sb.append(matrix[i][columnNo]);
         }
         return sb.toString();
     }
