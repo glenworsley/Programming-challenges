@@ -47,4 +47,10 @@ public class WordSearchTest {
     public void testHorizontalWordInRow4() {
         assertTrue(WORD_SEARCH.search(MATRIX, "MASS"));
     }
+
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testInvalidMatrix() {
+        WORD_SEARCH.search(null , "TEST");
+    }
 }

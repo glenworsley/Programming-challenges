@@ -2,6 +2,9 @@
 public class WordSearch {
 
     public boolean search(String[][] matrix, String targetWord) {
+
+        isValid(matrix);
+
         boolean found = false;
         //search horizontally until found or no more rows
         for (int i = 0; i < matrix.length && !found; i++) {
@@ -27,4 +30,11 @@ public class WordSearch {
         }
         return sb.toString();
     }
+
+    private boolean isValid(String[][] matrix) {
+        if (matrix == null)
+            throw new IllegalArgumentException("invalid matrix");
+        return true;
+    }
+
 }
